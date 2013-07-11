@@ -1,0 +1,50 @@
+unnamed_net30	Q8-2 R12-2 
+unnamed_net29	Q8-3 Q5-B 
+unnamed_net28	Q4-2 R11-2 
+unnamed_net27	Q4-3 Q3-B 
+unnamed_net26	Q2-2 R10-2 
+unnamed_net25	Q2-3 Q1-B 
+unnamed_net24	Q2-1 Q1-C D1-3 
+unnamed_net23	Q4-1 Q3-C D1-19 
+unnamed_net22	Q8-1 Q5-C D1-18 
+unnamed_net21	D1-9 D1-14 R9-2 D1-5 
+unnamed_net20	D1-22 D1-12 R8-2 D1-28 
+unnamed_net19	D1-23 D1-17 R7-2 D1-27 
+unnamed_net18	D1-6 D1-10 R6-2 D1-1 
+unnamed_net17	D1-7 D1-11 R5-2 D1-2 
+unnamed_net16	D1-8 D1-13 R4-2 D1-4 
+unnamed_net15	D1-20 D1-15 R3-2 D1-24 
+unnamed_net14	D1-21 D1-16 R2-2 D1-25 
+unnamed_net13	R10-1 U2-3 
+unnamed_net12	R11-1 U2-2 
+unnamed_net11	R12-1 U2-4 
+unnamed_net10	C1-2 U2-7 
+unnamed_net9	R1-2 C1-1 U2-15 
+unnamed_net8	R6-1 U3-4 
+unnamed_net7	R7-1 U3-5 
+unnamed_net6	R8-1 U3-6 
+unnamed_net5	R9-1 U3-7 
+unnamed_net4	R5-1 U3-3 
+unnamed_net3	R4-1 U3-2 
+unnamed_net2	R3-1 U3-1 
+unnamed_net1	R2-1 U3-15 
+SPIN	C102-1 R102-2 CONN1-2 
+VSS	U2-8 
+VDD	U2-16 
+FOSC	CONN1-4 U2-10 
+Vdd	Q5-E Q3-E Q1-E CONN3-1 U3-10 R103-1 CONN1-1 R101-1 C101-1 S2-2 CONN2-1 
+Vss	U2-13 CONN3-6 R103-2 C102-2 CONN1-5 U2-11 C101-2 S2-3 CONN2-6 
+\_RESET\_	R101-2 S1-1 CONN2-2 
+GND	U3-8 U3-13 S1-2 U1-14 
+Vcc	U3-16 U1-1 
+RESET	U1-4 
+LATCH	CONN3-4 U2-14 U3-12 U1-5 
+SCLK	CONN3-3 U3-11 U1-3 
+DIG_IO	CONN3-2 U3-14 U1-2 
+SRST	R1-1 CONN3-5 U1-6 
+MOSI	CONN2-3 U1-7 
+MISO	CONN2-4 R102-1 U1-8 
+SCK	CONN2-5 U1-9 
+SPEED	R103-3 U1-11 
+MODE	CONN1-3 S2-1 U1-12 
+TRIG	U2-12 U1-13 

@@ -1,0 +1,3 @@
+schematics dvd-speedControl.sch SevenSeg-display.sch
+elements-dir footprint
+output-name dvd-control
