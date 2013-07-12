@@ -1,5 +1,4 @@
-Check pinout of Attiy84
-Evaluate netlist
-footprint of led panel
-
-resistor pack become dip???
+group c++ code to separate c files
+add switch, capacitors and extra trimmer to circuit
+draw PCB
+Box from IP?
