@@ -2,3 +2,4 @@ group c++ code to separate c files
 draw PCB
 
 Find toggle switch
+add resistor to mode switching (~1kOhm)

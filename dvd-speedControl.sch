@@ -1,4 +1,4 @@
-v 20110115 2
+v 20121203 2
 C 40000 40000 0 0 0 title-bordered-A3.sym
 C 46100 47000 1 0 0 ATtiny44_DIP.sym
 {
@@ -15,7 +15,7 @@ T 44800 50200 9 15 1 0 0 0 1
 Microcontroller
 T 40400 46600 9 15 1 0 0 0 1
 SPI Bus
-T 47800 44600 9 15 1 0 0 0 1
+T 47700 44800 9 15 1 0 0 0 1
 Motor Enable (ON/OFF)
 C 43200 48600 1 0 0 vdd-1.sym
 C 43200 48600 1 270 0 capacitor-2.sym
@@ -32,17 +32,8 @@ T 43200 48600 5 10 0 1 0 0 1
 footprint=CPolar200
 }
 C 43600 47700 1 180 0 vss-1.sym
-C 49400 43800 1 0 0 output-2.sym
-{
-T 50300 44000 5 10 0 0 0 0 1
-net=MODE:1
-T 49600 44500 5 10 0 0 0 0 1
-device=none
-T 50400 43900 5 10 1 1 0 1 1
-value=MODE
-}
-C 48100 44100 1 0 0 vdd-1.sym
-N 48300 43700 48500 43700 4
+C 47700 44200 1 0 0 vdd-1.sym
+N 47900 43800 48100 43800 4
 C 46100 48500 1 0 1 output-2.sym
 {
 T 45200 48700 5 10 0 0 0 6 1
@@ -124,7 +115,7 @@ device=none
 T 55800 47500 5 10 1 1 0 1 1
 value=TRIG
 }
-C 48500 43700 1 180 0 vss-1.sym
+C 48100 43800 1 180 0 vss-1.sym
 C 49500 47300 1 0 1 input-2.sym
 {
 T 49500 47500 5 10 0 0 0 6 1
@@ -143,7 +134,7 @@ device=none
 T 49000 47800 5 10 1 1 0 1 1
 value=SCK
 }
-N 48300 44100 48500 44100 4
+N 47900 44200 48100 44200 4
 C 40800 48900 1 0 0 connector5-1.sym
 {
 T 42600 50400 5 10 0 0 0 0 1
@@ -344,20 +335,6 @@ value=SPEED2
 }
 C 55100 49500 1 0 0 vdd-1.sym
 C 55500 48600 1 180 0 vss-1.sym
-C 49600 43000 1 90 0 capacitor-1.sym
-{
-T 48900 43200 5 10 0 0 90 0 1
-device=CAPACITOR
-T 49800 43100 5 10 1 1 90 0 1
-refdes=C105
-T 48700 43200 5 10 0 0 90 0 1
-symversion=0.1
-T 49600 43000 5 10 0 0 0 0 1
-value=100n
-T 49600 43000 5 10 0 1 0 0 1
-footprint=CK05_type_Capacitor
-}
-C 49600 43000 1 180 0 vss-1.sym
 T 40500 50900 9 15 1 0 0 0 1
 Connector to DVD-ROM
 C 44800 42700 1 270 0 resistor-variable-1.sym
@@ -382,13 +359,13 @@ value=250k
 T 41600 42700 5 10 0 1 0 0 1
 footprint=JUMPER3
 }
-C 49400 43700 1 0 1 switch-toggle.sym
+C 49000 43800 1 0 1 switch-toggle.sym
 {
-T 49000 44500 5 10 0 0 0 6 1
+T 48600 44600 5 10 0 0 0 6 1
 device=SPDT
-T 49000 44300 5 10 1 1 0 6 1
+T 48600 44400 5 10 1 1 0 6 1
 refdes=S2
-T 49400 43700 5 10 0 1 0 0 1
+T 49000 43800 5 10 0 1 0 0 1
 footprint=JUMPER3
 }
 C 43700 48600 1 0 0 vcc-1.sym
@@ -510,4 +487,38 @@ T 52900 50650 5 10 0 0 0 0 1
 footprint=DIP16_op
 T 52600 46300 5 10 0 1 0 0 1
 value=74hc4040
+}
+C 49900 43900 1 0 0 output-2.sym
+{
+T 50800 44100 5 10 0 0 0 0 1
+net=MODE:1
+T 50100 44600 5 10 0 0 0 0 1
+device=none
+T 50900 44000 5 10 1 1 0 1 1
+value=MODE
+}
+C 50100 43100 1 90 0 capacitor-1.sym
+{
+T 49400 43300 5 10 0 0 90 0 1
+device=CAPACITOR
+T 49200 43300 5 10 0 0 90 0 1
+symversion=0.1
+T 50100 43100 5 10 0 0 0 0 1
+value=100n
+T 50100 43100 5 10 0 1 0 0 1
+footprint=CK05_type_Capacitor
+T 50300 43200 5 10 1 1 90 0 1
+refdes=C105
+}
+C 50100 43100 1 180 0 vss-1.sym
+C 49000 43900 1 0 0 resistor-1.sym
+{
+T 49300 44300 5 10 0 0 0 0 1
+device=RESISTOR
+T 49300 44200 5 10 1 1 0 0 1
+refdes=R106
+T 49000 43900 5 10 0 0 90 0 1
+value=20k
+T 49000 43900 5 10 0 1 90 0 1
+footprint=R400
 }
