@@ -174,9 +174,9 @@ refdes=C102
 T 49700 46700 5 10 0 0 270 0 1
 symversion=0.1
 T 48800 46900 5 10 0 0 0 0 1
-value=10n
+value=22u
 T 48800 46900 5 10 0 1 0 0 1
-footprint=CK05_type_Capacitor
+footprint=CPolar100
 }
 N 49000 46900 49300 46900 4
 C 49200 46000 1 180 0 vss-1.sym
