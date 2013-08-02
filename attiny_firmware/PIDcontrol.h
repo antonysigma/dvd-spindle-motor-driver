@@ -8,8 +8,8 @@
 
 ///Torque control pin
 const int spinPin = PIN_A5;
-///Speed input pin (PIN_A1)
-const int speedPin = 1;
+///Speed input pin (PIN_A2)
+const int speedPin = 2;
 
 const unsigned int sampleT = 200;
 void PID_control(long deltaT);
