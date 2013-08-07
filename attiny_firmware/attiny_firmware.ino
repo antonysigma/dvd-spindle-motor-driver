@@ -23,7 +23,7 @@ void measureSpin()
   timePast = timeNow;
 
   // Update kilo-revolution per minute
-  float kilo_rev = 1024. * 60e-3 / deltaT / 6;
+  float kilo_rev = 1024. * 60e-3 / deltaT / 4;
   convert2Digits(kilo_rev);
 }
 
