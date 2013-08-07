@@ -10,20 +10,22 @@ const int stop_level = 90;
 void PID_control(long deltaT)
 {
   // Previous input value
-  static int u = 0;
-  static int e = 0;
+  static double u = 0;
+  static double e = 0;
+  float new_u = 0;
 
   // Measure output RPM (range: 0 ~ 255)
-  int y = (long(T_min) << 8) / deltaT;
+  float y = (long(T_min) << 8) / deltaT;
 
   // Measure speed input (range: 0 ~ 255)
-  int x = analogRead(speedPin) >> 2;
+  float x = analogRead(speedPin) >> 3;
+  float z = analogRead(speedPinBlue) >> 3;
 
   // Estimate error
-  int new_e = x - y;
+  float new_e = x + z - y;
 
   // Apply PI gain
-  int new_u = u + (new_e - e) + int((long(new_e) * sampleT) >> 11);
+  new_u = u + (new_e - e) + int((long(new_e) * sampleT) >> 11);
 
   // Prevent integral windup
   if(new_u < 0) new_u=0;
@@ -31,8 +33,8 @@ void PID_control(long deltaT)
 
   u = new_u;
   e = new_e;
-
+  int out = u;
   // Update the driving signal (Map to 100~255)
-  analogWrite(spinPin, stop_level+u>>1);
+  analogWrite(spinPin, stop_level+out>>1);
 }
 

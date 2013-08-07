@@ -23,7 +23,7 @@ void measureSpin()
   timePast = timeNow;
 
   // Update revolution per sec ( rev per sec / 100 )
-  int rev100 = long(102400) / deltaT / 6;
+  float rev100 = long(102400) * 16.67 / deltaT;
   convert2Digits(rev100);
 }
 

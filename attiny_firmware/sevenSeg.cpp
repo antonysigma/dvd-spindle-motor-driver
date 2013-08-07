@@ -58,10 +58,20 @@ void convert2Digits(long num100)
   int ten = (num100 / 1000) % 10;
   int one = (num100 / 100) % 10;
   int tenth = (num100 / 10) % 10;
+  int last = num100 % 10;
 
     showDigits[0] = digits09[ten];
     showDigits[1] = digits09[one] & decimalPoint;
-    showDigits[2] = digits09[tenth];
+    showDigits[2] = digits09[tenth] & decimalPoint;
+    //delay(1500);
+    //showDigits[0] = letterV;
+    //showDigits[1] = letterV;
+    //showDigits[2] = letterR;
+    //delay(600);
+    //showDigits[0] = digits09[one] & decimalPoint;
+    //showDigits[1] = digits09[tenth] & decimalPoint;
+    //showDigits[2] = digits09[last];
+    //delay(1500);
   }
   else
   {
