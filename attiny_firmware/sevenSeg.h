@@ -15,7 +15,7 @@ const int dataPin = PIN_B0;
 const int resetPin = PIN_A6;
 
 void DisplayReset();
-void convert2Digits(long num100);
+void convert2Digits(float num);
 void DisplayDigits();
 
 #endif

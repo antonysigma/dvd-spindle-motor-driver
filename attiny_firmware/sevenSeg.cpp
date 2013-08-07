@@ -45,19 +45,19 @@ void DisplayReset(){
   digitalWrite(latchPin, LOW);
 }
 
-void convert2Digits(long num100)
+void convert2Digits(float num)
 {
-  if (num100 > 9990) //overflow
+  if (num > 99.9) //overflow
   {
     showDigits[0] = letterO;
     showDigits[1] = letterV;
     showDigits[2] = letterR;
   }
-  else if(num100 > 999)
+  else if(num > 9.99)
   {
-  int ten = (num100 / 1000) % 10;
-  int one = (num100 / 100) % 10;
-  int tenth = (num100 / 10) % 10;
+  int ten = int(num) % 10;
+  int one = int(num * 10) % 10;
+  int tenth = int(num * 100) % 10;
 
     showDigits[0] = digits09[ten];
     showDigits[1] = digits09[one] & decimalPoint;
@@ -65,9 +65,9 @@ void convert2Digits(long num100)
   }
   else
   {
-  int one = (num100 / 100) % 10;
-  int tenth = (num100 / 10) % 10;
-  int hundredth = num100 % 10;
+  int one = int(num * 10) % 10;
+  int tenth = int(num * 100) % 10;
+  int hundredth = int(num * 1000) % 10;
 
     showDigits[0] = digits09[one] & decimalPoint;
     showDigits[1] = digits09[tenth];
