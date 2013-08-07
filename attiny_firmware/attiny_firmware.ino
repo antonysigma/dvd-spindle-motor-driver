@@ -22,9 +22,10 @@ void measureSpin()
   deltaT = timeNow - timePast;
   timePast = timeNow;
 
-  // Update revolution per sec ( rev per sec / 100 )
-  float rev100 = long(102400) * 16.67 / deltaT;
-  convert2Digits(rev100);
+  // Update kilo-revolution per minute = 
+  // (1024 / dT ) * 60 second / 1 minute / 1 kilo / (no of pole pairs)
+  float kilo_rev = 1024. * 60e-3 / deltaT / 4;
+  convert2Digits(kilo_rev);
 }
 
 
