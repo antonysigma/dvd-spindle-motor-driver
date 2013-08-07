@@ -47,17 +47,27 @@ void DisplayReset(){
 
 void convert2Digits(float num)
 {
-  if (num > 99.9) //overflow
+  if (num > 999) //overflow
   {
     showDigits[0] = letterO;
     showDigits[1] = letterV;
     showDigits[2] = letterR;
   }
+  else if (num > 99.9) //overflow
+  {
+  int hundred = int(num / 100) % 10;
+  int ten = int(num / 10) % 10;
+  int one = int(num) % 10;
+
+    showDigits[0] = digits09[hundred];
+    showDigits[1] = digits09[ten];
+    showDigits[2] = digits09[one] & decimalPoint;
+  }
   else if(num > 9.99)
   {
-  int ten = int(num) % 10;
-  int one = int(num * 10) % 10;
-  int tenth = int(num * 100) % 10;
+  int ten = int(num / 10) % 10;
+  int one = int(num) % 10;
+  int tenth = int(num * 10) % 10;
 
     showDigits[0] = digits09[ten];
     showDigits[1] = digits09[one] & decimalPoint;
@@ -65,9 +75,9 @@ void convert2Digits(float num)
   }
   else
   {
-  int one = int(num * 10) % 10;
-  int tenth = int(num * 100) % 10;
-  int hundredth = int(num * 1000) % 10;
+  int one = int(num) % 10;
+  int tenth = int(num * 10) % 10;
+  int hundredth = int(num * 100) % 10;
 
     showDigits[0] = digits09[one] & decimalPoint;
     showDigits[1] = digits09[tenth];
