@@ -4,35 +4,35 @@
 const unsigned int T_min = 100;
 const int stop_level = 90;
 
-//const int Kp = 2;
-//const int Ki = 1;
+const float Kp = 0.5;
+const float Ki = sampleT * 4e-4;
 
 void PID_control(long deltaT)
 {
   // Previous input value
-  static int u = 0;
+  static float u = 0;
   static int e = 0;
 
-  // Measure output RPM (range: 0 ~ 255)
-  int y = (long(T_min) << 8) / deltaT;
+  // Measure output RPM (range: 0 ~ 1024)
+  int y = (long(T_min) << 10) / deltaT;
 
-  // Measure speed input (range: 0 ~ 255)
-  int x = analogRead(speedPin) >> 2;
+  // Measure speed input (range: 0 ~ 1024)
+  int x = analogRead(speedPin);
 
   // Estimate error
   int new_e = x - y;
 
   // Apply PI gain
-  int new_u = u + (new_e - e) + int((long(new_e) * sampleT) >> 11);
+  float new_u = u + (new_e - e) * Kp + new_e * Ki;
 
   // Prevent integral windup
   if(new_u < 0) new_u=0;
-  else if(new_u > 255) new_u = 255;
+  else if(new_u > 1024) new_u = 1024;
 
   u = new_u;
   e = new_e;
 
-  // Update the driving signal (Map to 100~255)
-  analogWrite(spinPin, stop_level+u>>1);
+  // Update the driving signal (Map to 90 ~ 255)
+  analogWrite(spinPin, stop_level+int(u * (256-stop_level))>>10 );
 }
 
