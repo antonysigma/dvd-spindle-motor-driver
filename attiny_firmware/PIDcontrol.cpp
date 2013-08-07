@@ -13,7 +13,7 @@ void PID_control(long deltaT)
   static float u = 0;
   static int e = 0;
 
-  // Measure output RPM (range: 0 ~ 1024)
+  // Measure speed output (range: 0 ~ 1024)
   int y = (long(T_min) << 10) / deltaT;
 
   // Measure speed input (range: 0 ~ 1024)
@@ -27,12 +27,12 @@ void PID_control(long deltaT)
 
   // Prevent integral windup
   if(new_u < 0) new_u=0;
-  else if(new_u > 1024) new_u = 1024;
+  else if(new_u > 0xff) new_u = 0xff;
 
   u = new_u;
   e = new_e;
 
   // Update the driving signal (Map to 90 ~ 255)
-  analogWrite(spinPin, stop_level+int(u * (256-stop_level))>>10 );
+  analogWrite(spinPin, stop_level+int(u * (0xf-stop_level))>>10 );
 }
 
