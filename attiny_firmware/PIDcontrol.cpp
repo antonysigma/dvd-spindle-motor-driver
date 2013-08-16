@@ -34,6 +34,6 @@ void PID_control(long deltaT)
   e = new_e;
 
   // Update the driving signal (Map to 90 ~ 255)
-  analogWrite(spinPin, stop_level+long(u * (255-stop_level))>>10 );
+  analogWrite(spinPin, stop_level+out>>3 ); //maintain previous config because of stability issues
 }
 
