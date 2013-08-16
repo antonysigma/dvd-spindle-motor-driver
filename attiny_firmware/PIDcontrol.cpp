@@ -14,7 +14,7 @@ void PID_control(long deltaT)
   static int e = 0;
 
   // Measure speed output (range: 0 ~ 1023)
-  int y = (long(T_min) << 10) / deltaT;
+  float y = (long(T_min) << 10) / deltaT;
 
   // Measure speed input (range: 0 ~ 1023)
   //int x = (analogRead(speedPinCoarse) | 0x1e0) | (analogRead(speedPinFine) | 0x1f);
