@@ -23,8 +23,8 @@ void measureSpin()
   timePast = timeNow;
 
   // Update kilo-revolution per minute = 
-  // (TRIG Pin frequency * 1024) * 1 minute / (no of pole pair) / 1 kilo
-  float kilo_rev = 1024. * 60e-3 / deltaT / 4;
+  // (1024 / dT ) * 60e3 second / 1 minute / 1 kilo / (no of pole pairs)
+  float kilo_rev = 1024. * 60 / deltaT / 36; // 60 / 1.667 = 35.9999 pairs
   convert2Digits(kilo_rev);
 }
 
