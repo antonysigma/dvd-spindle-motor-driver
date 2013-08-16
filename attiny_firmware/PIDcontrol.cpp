@@ -4,7 +4,7 @@
 const unsigned int T_min = 100;
 const int stop_level = 90;
 
-const float Kp = 0.5;
+const float Kp = 1.509;
 const float Ki = sampleT * 4e-4;
 
 void PID_control(long deltaT)
