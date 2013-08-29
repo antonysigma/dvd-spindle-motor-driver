@@ -1,8 +1,10 @@
 #include "PIDcontrol.h"
 
+#define map1024(u,lowerLimit,upperLimit) lowerLimit + (long(u)*(upperLimit-lowerLimit)) >> 10
+
 /******************************************************************************/
 const unsigned int T_min = 100;
-const int stop_level = 90;
+const int stop_level = 100;
 
 const float Kp = 1.509;
 const float Ki = sampleT * 4.88e-4;
@@ -32,7 +34,7 @@ void PID_control(long deltaT)
   u = new_u;
   e = new_e;
 
-  // Update the driving signal (Map to 90 ~ 255)
-  analogWrite(spinPin, stop_level+int(u * (0xf-stop_level))>>10 );
+  // Update the driving signal (Map to 100 ~ 255)
+  analogWrite(spinPin, map1024(u, stop_level, 255) );
 }
 
