@@ -24,7 +24,9 @@ void measureSpin()
 
   // Update kilo-revolution per minute = 
   // (1024 / dT ) * 60 second / 1 minute / 1 kilo / (no of pole pairs)
-  float kilo_rev = 1024. * 60e-3 / deltaT / 4;
+  // Isn't it (1024000/dT)? Since it is milliseconds.
+  //float kilo_rev = 1024. * 60e-3 / deltaT / 4;
+  float kilo_rev = 1024. * 60 / deltaT / 36; // 60 / 1.667 = 35.9999 pairs
   convert2Digits(kilo_rev);
 }
 
