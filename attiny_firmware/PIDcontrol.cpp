@@ -1,6 +1,6 @@
 #include "PIDcontrol.h"
 
-#define map1024(u,lowerLimit,upperLimit) lowerLimit + (long(u)*(upperLimit-lowerLimit)) >> 10
+#define map1024(u,lowerLimit,upperLimit) lowerLimit + ((long(u)*(upperLimit-lowerLimit)) >> 10)
 
 /******************************************************************************/
 const unsigned int T_min = 100;
