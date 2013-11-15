@@ -19,7 +19,7 @@ void PID_control(long deltaT)
   float y = (long(T_min) << 10) / deltaT;
 
   // Measure speed input (range: 0 ~ 1023)
-  int x = (analogRead(speedPinCoarse) & 0x3E0) | (analogRead(speedPinFine) >> 5);
+  int x = (analogRead(speedPinCoarse) & 0x380) | (analogRead(speedPinFine) >> 3);
 
   // Estimate error
   float new_e = x - y;
