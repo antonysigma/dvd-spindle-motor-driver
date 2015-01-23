@@ -26,7 +26,7 @@ void measureSpin()
   // (512 / dT) / (36 Ticks / Rev)
   //        * (60k millisecond / 1 minute) * (1 kiloRev / 1000 Rev)
   // dT = millisecond / tick
-  float kilo_rev = 5120. / (deltaT * 3);
+  float kilo_rev = 1280. / (deltaT * 3);
   convert2Digits(kilo_rev);
 }
 
