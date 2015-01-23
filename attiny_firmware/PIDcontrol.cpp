@@ -3,7 +3,7 @@
 #define map1024(u,lowerLimit,upperLimit) lowerLimit + ((long(u)*(upperLimit-lowerLimit)) >> 10)
 
 /******************************************************************************/
-const unsigned int T_min = 100;
+const unsigned int T_min = 120;
 const int stop_level = 90;
 
 const float Kp = 1.5;
