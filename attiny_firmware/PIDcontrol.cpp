@@ -3,10 +3,10 @@
 #define map1024(u,lowerLimit,upperLimit) lowerLimit + ((long(u)*(upperLimit-lowerLimit)) >> 10)
 
 /******************************************************************************/
-const unsigned int T_min = 120;
-const int stop_level = 90;
+const unsigned int T_min = 110;
+const int stop_level = 93;
 
-const float Kp = 1.5;
+const float Kp = .8;
 const float Ki = sampleT * 5e-4;
 
 void PID_control(long deltaT)

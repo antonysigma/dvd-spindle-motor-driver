@@ -11,7 +11,7 @@
 #include "PIDcontrol.h"
 
 /******************************************************************************/
-long deltaT = 0;
+long deltaT = 1000;
 
 long timePast = millis();
 void measureSpin()
