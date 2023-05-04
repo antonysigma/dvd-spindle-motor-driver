@@ -1,6 +1,6 @@
-*.pcb-
-*.bak*
-*~
-*.ps
-*.pdf
-*.net
+schematic/*.pcb-
+schematic/*.bak*
+schematic/*~
+schematic/*.ps
+schematic/*.pdf
+schematic/*.net
