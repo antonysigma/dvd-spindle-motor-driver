@@ -64,6 +64,20 @@ microcontroller (Fig. 1). ![](drawing/motor-driver-ic.png)
 ![control theory](drawing/control-theory.png)
 ![](drawing/feedback-control.png)
 
+**Decoding the rotary encoder signal**
+
+The same DVD spindle motor IC also decodes the built in Hall sensor to return
+the 3 phase quadrature signal at TTL. For the quick prototyping purpose, we do
+not need to tell the absolute position or the spin direction of the disk, so we
+only pick one signal out of the 3 phase bus to measure speed.
+
+We offload pulse conuting logic to an external IC (74HC4040) to reduce the pulse
+rate by 1024 times. Otherwise, the MCU running at 8MHz will be overwhelmed by
+the edge interrupt. The RPM measurement is implemented in the MCU, we the time
+interval between adjacent edge interrupt is estimated from the 8MHz MCU clock.
+
+![](drawing/FC_PIN.jpg)
+
 
 ## PCB routing
 
