@@ -49,7 +49,7 @@ The overarching goal, at the time, was to justify the investment of custom contr
 
 * the RPM control board and the DVD drive can be quickly integrated into the high-speed microscopy system (at 100 image line scan rate) without impacting research timeline.
 
-... so I can justify more inventment on a professionally made driver board for the research, like what (Ultima Genomics did with their spinning flowcells)[]https://www.biorxiv.org/content/10.1101/2022.05.29.493900v1.full].
+... so I can justify more inventment on a professionally made driver board for the research, like what [Ultima Genomics did with their spinning flowcells](https://www.biorxiv.org/content/10.1101/2022.05.29.493900v1.full).
 
 **Understanding the DVD motor spindle driver IC** The DVD drive is dissembled to
 inspect spindle motor driver IC (Fig. 1a) on the control board. The
